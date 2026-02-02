@@ -228,15 +228,17 @@ background-color: white;
     border-radius: 10px;
 }
 
-.prev, .next {
-
-    background: none;
-    border: none;
-    font-size: 10px;
-    color: black;
+.flecha {
+    width: 45px;      /* tamaño de tus flechas */
     cursor: pointer;
-
 }
+
+.flecha:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+
 
 
 

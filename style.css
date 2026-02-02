@@ -238,7 +238,7 @@ background-color: white;
 }
 
 .flecha {
-    width: 10px;      /* tamaño de tus flechas */
+    width: 20px;      /* tamaño de tus flechas */
     cursor: pointer;
 }
 

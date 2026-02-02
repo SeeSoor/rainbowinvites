@@ -1,1 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Great+Vibes&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Butterfly+Kids&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    width: 100%;
+    background-color: transparent;
+    padding: 15px;
+    height: 70px;
+
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    z-index: 1000;
+}
+
+
+.menu{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    gap: 40px;
+}
+
+.menu a{
+    font-family: great vibes;
+    color: white;
+    text-decoration: none;
+    font-size: 35px;
+    position: relative;
+    display: flex;
+    text-align:justify
+}
+
+.menu a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+.menu a:hover::after{
+    width: 100%;
+}
+
+.logo{
+    width: 45px;
+    height: 45px;
+}
+
+.hero{
+    height: 80vh;
+    background-image: url("assets/2.jpg");
+    background-size: cover;
+    background-position: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hero h1{
+    color: white;
+    font-size: 30px;
+}
+
+.itinerario{
+    background-color: #414833;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 90vh;
+    flex-direction: column;
+    gap: 40px;
+
+    color: white;
+}
+
+.itinerario h1{
+    font-family: great vibes;
+    font-weight: 100;
+    font-size: 50px;
+}
+
+.misa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* 👈 centra horizontal */
+    text-align: center;    /* 👈 centra textos */
+}
+
+.church{
+    max-width: 150px;
+}
+
+.foto2{
+    background-image: url("assets/3.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+
+.regalos    {
+    background-color: #a4ac86;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40vh;
+    text-align: center;
+    font-weight: 400;
+    color: white;
+}
+
+.regalos h1{
+    font-family: great vibes;
+    font-size: 50px;
+    font-weight: 100;
+}
+
+.amazon{
+    max-width: 120px;
+}
+
+.footer{
+    background-color: #414833;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+
+    color: white;
+}
+
+.footer h1{
+
+    font-family: Butterfly Kids;
+    font-weight: 100;
+}
+
+
+.button1{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    outline: none;
+    line-height: 1;
+    font-size: 14px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    border-radius: 500px;
+    border: 1px solid transparent;
+    transition-duration: .3s;
+    min-width: 160px;
+    letter-spacing: 2px;
+    white-space: normal;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    color: white;
+    padding: 16px 14px 18px;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 2px #616467;
+    height: 48px;
+}
+
+.button1:hover{
+color: black;
+background-color: white;
+}
+
+.button1 a{
+    text-decoration: none;
+}
+
+.header.scrolled {
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+}
+
+
+/* ================== NUEVO SLIDER ================== */
+/* */
+
+.slider{
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 0 5px;
+}
+
+.slider-viewport{
+    width: 800px;      /* tamaño del marco visible */
+    overflow: hidden;  /* aquí SÍ ocultamos lo que sobra */
+}
+
+.slider-container{
+    display: flex;
+}
+
+.slide{
+    min-width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.flecha {
+    width: 10px;      /* tamaño de tus flechas */
+    cursor: pointer;
+}
+
+.flecha:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+
+
+@media (max-width: 480px) {
+.itinerario{
+    background-color: #414833;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 90vh;
+    flex-direction: column;
+    gap: 30px;
+
+    color: white;
+}
+
+.itinerario h1{
+    font-family: great vibes;
+    font-weight: 100;
+    font-size: 35px;
+}
+
+.misa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* 👈 centra horizontal */
+    text-align: center;  
+}
+
+}/* 👈 Media Query Llave */
 

@@ -147,6 +147,37 @@ prev.addEventListener('click', () => {
     index = (index - 1 + slides.length) % slides.length;
     updateSlider();
 });
+
+/* ============================= */
+/*      SWIPE CON EL DEDO        */
+/* ============================= */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+const viewport = document.querySelector('.slider-viewport');
+
+viewport.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+});
+
+viewport.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].clientX;
+
+    let diferencia = touchStartX - touchEndX;
+
+    if (diferencia > 50) {
+        // Deslizó hacia la izquierda → siguiente
+        index = (index + 1) % slides.length;
+        updateSlider();
+    }
+
+    if (diferencia < -50) {
+        // Deslizó hacia la derecha → anterior
+        index = (index - 1 + slides.length) % slides.length;
+        updateSlider();
+    }
+});
 </script>
 
 </body>

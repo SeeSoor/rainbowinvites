@@ -31,7 +31,7 @@
             <button class="button1"><a onclick="window.location.href='https://maps.app.goo.gl/QqXkqnbuFZX4SHrK6'">Ubicación</a></button>
         </div>
         <div class="misa">
-            <img src="assets/bailando.png" alt="" class="church">
+            <img src="assets/bailando.png" alt="" class="reception">
             <h1>Recepción</h1>
             <p>Salón Verité</p>
             <p>20:00 horas</p>
@@ -76,7 +76,18 @@
     <img src="assets/Flecha Derecha.png" class="next flecha" alt="">
 
 </section>
-<!-- ================================================ -->
+<!-- ========== -->
+
+    <section class="dresscode" id="">
+
+        <img src="assets/dresscode.png" alt="" class="dressimage">
+        
+        <div>
+            <h1>Dress Code</h1>
+            <p class="dresstext">Etiqueta</p>
+        </div>
+
+    </section>
 
     <section class="footer" id="">
         <h1>SeeSoor Invites ®</h1>
@@ -87,16 +98,30 @@
         /*Scroll Hover Top Page*/
     const header = document.querySelector('.header');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+    if (window.scrollY > 50) {
             header.classList.add('scrolled');
-        } else {
+    } else {
             header.classList.remove('scrolled');
+    }
+    }); 
+
+        /*Efecto Suave Texto*/
+const elementos = document.querySelectorAll('.itinerario h1, .misa, .dresscode h1, h1, p, .dressimage');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
         }
     });
+}, {
+    threshold: 0.2
+});
 
-    /* ============================= */
-/* 2) SLIDER DE IMÁGENES         */
-/* ============================= */
+elementos.forEach(el => {
+    observer.observe(el);
+});
+        /*SLIDER DE IMÁGENES*/
 
 const slides = document.querySelectorAll('.slide');
 const container = document.querySelector('.slider-container');

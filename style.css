@@ -327,5 +327,9 @@ background-color: white;
     max-width: 140px;
     padding-bottom: 8px;
 
-}/* 👈 Media Query Llave */
 }
+.dresstext{
+    font-size: 20px;
+    font-weight: 100px;
+}
+}/* 👈 Media Query Llave */

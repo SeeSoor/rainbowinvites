@@ -323,5 +323,9 @@ background-color: white;
     text-align: center;  
 }
 
-}/* 👈 Media Query Llave */
+.dressimage{
+    max-width: 140px;
+    padding-bottom: 8px;
 
+}/* 👈 Media Query Llave */
+}

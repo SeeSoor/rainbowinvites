@@ -159,21 +159,23 @@ const viewport = document.querySelector('.slider-viewport');
 
 viewport.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
-});
+}, { passive: true });
+
+viewport.addEventListener('touchmove', (e) => {
+    e.preventDefault();   // 👈 CLAVE para Xiaomi / Poco
+}, { passive: false });
 
 viewport.addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].clientX;
 
     let diferencia = touchStartX - touchEndX;
 
-    if (diferencia > 50) {
-        // Deslizó hacia la izquierda → siguiente
+    if (diferencia > 30) {   // lo hice más sensible
         index = (index + 1) % slides.length;
         updateSlider();
     }
 
-    if (diferencia < -50) {
-        // Deslizó hacia la derecha → anterior
+    if (diferencia < -30) {
         index = (index - 1 + slides.length) % slides.length;
         updateSlider();
     }

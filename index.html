@@ -148,29 +148,44 @@ prev.addEventListener('click', () => {
     updateSlider();
 });
 
-/* ============================= */
-/*      SWIPE CON EL DEDO        */
-/* ============================= */
+/*Swipe Left Right*/
 
 let touchStartX = 0;
-let touchEndX = 0;
+let touchStartY = 0;
+let isHorizontal = false;
 
 const viewport = document.querySelector('.slider-viewport');
 
 viewport.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    isHorizontal = false;
 }, { passive: true });
 
 viewport.addEventListener('touchmove', (e) => {
-    e.preventDefault();   // 👈 CLAVE para Xiaomi / Poco
+
+    const moveX = e.touches[0].clientX;
+    const moveY = e.touches[0].clientY;
+
+    let diffX = Math.abs(moveX - touchStartX);
+    let diffY = Math.abs(moveY - touchStartY);
+
+    // 👉 Si el gesto es MÁS horizontal que vertical:
+    if (diffX > diffY) {
+        isHorizontal = true;
+        e.preventDefault();   // solo bloqueamos cuando es swipe lateral
+    }
+
 }, { passive: false });
 
 viewport.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].clientX;
 
+    if (!isHorizontal) return; // si fue scroll vertical, no hacemos nada
+
+    const touchEndX = e.changedTouches[0].clientX;
     let diferencia = touchStartX - touchEndX;
 
-    if (diferencia > 30) {   // lo hice más sensible
+    if (diferencia > 30) {
         index = (index + 1) % slides.length;
         updateSlider();
     }
@@ -180,6 +195,7 @@ viewport.addEventListener('touchend', (e) => {
         updateSlider();
     }
 });
+
 </script>
 
 </body>

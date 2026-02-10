@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Great+Vibes&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Butterfly+Kids&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 
 
 *{
@@ -10,7 +12,7 @@
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Montserrat;
 }
 
 .header{
@@ -95,11 +97,13 @@ body{
     color: white;
 }
 
-.itinerario h1{
+.itinerario h1, .dresscode h1{
     font-family: great vibes;
     font-weight: 100;
     font-size: 50px;
 }
+
+
 
 .misa{
     display: flex;
@@ -108,8 +112,28 @@ body{
     text-align: center;    /* 👈 centra textos */
 }
 
+.itinerario h1, .misa, .dresscode h1, h1, p, .dressimage{
+    /* 👈 Animación */
+    opacity: 0;
+    transform: translateY(40px);   
+    transition: all 0.7s ease;
+}
+
+.itinerario h1.visible, .misa.visible, .dresscode h1.visible, h1.visible, p.visible, .dressimage.visible{
+    /* 👈 Animación */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.reception{
+    max-width: 150px;
+
+}
+
 .church{
     max-width: 150px;
+    padding-bottom: 8px;
 }
 
 .foto2{
@@ -146,11 +170,11 @@ body{
 }
 
 .footer{
-    background-color: #414833;
+    background-color: #1F1F1F;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10vh;
+    height: 5vh;
 
     color: white;
 }
@@ -159,6 +183,29 @@ body{
 
     font-family: Butterfly Kids;
     font-weight: 100;
+}
+
+.dresscode{
+    background-color: #B6C6D6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 40px;
+    height: 40vh;
+
+    color: white;
+}
+
+.dresstext{
+    font-size: 30px;
+    font-weight: 100px;
+}
+
+.dressimage{
+    max-width: 180px;
+    padding-bottom: 8px;
 }
 
 
